@@ -9,13 +9,22 @@ namespace AddressBookSystem_Part2
     internal class PersonInput
     {
         // Declaring class variable to get the all the details from user
-        public string fName { get; set; }
-        public string lName { get; set; }
-        public string address { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public string email { get; set; }
-        public int zip { get; set; }
-        public long phoneNumber { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Email { get; set; }
+        public int Zip { get; set; }
+        public long PhoneNumber { get; set; }
+
+        /// <summary>
+        /// To string method to write details in Console
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return $"First Name : {First_Name}\nLast Name : {Last_Name}\nAddress : {Address}\nCity : {City}\nState : {State}\nEmail : {Email}\nZip Code : {Zip}\nPhone Number : {PhoneNumber}";
+        }
     }
 }

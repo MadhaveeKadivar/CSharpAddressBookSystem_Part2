@@ -15,23 +15,19 @@ namespace AddressBookSystem_Part2.FileIOOperation
         public static void WriteRecordsInFile(string path,PersonInput person)
         {
            
-            if (File.Exists(path))
+            if (Program.IsFileExists(path))
             {
                 StreamWriter sw = File.AppendText(path);
-                sw.WriteLine("\nFirst Name : "+person.fName);
-                sw.WriteLine("Last Name : "+person.lName);
-                sw.WriteLine("Address : "+person.address);
-                sw.WriteLine("City : "+person.city);
-                sw.WriteLine("State : "+person.state);
-                sw.WriteLine("Email : "+person.email);
-                sw.WriteLine("Zip code : "+person.zip);
+                sw.WriteLine("\nFirst Name : "+person.First_Name);
+                sw.WriteLine("Last Name : "+person.Last_Name);
+                sw.WriteLine("Address : "+person.Address);
+                sw.WriteLine("City : "+person.City);
+                sw.WriteLine("State : "+person.State);
+                sw.WriteLine("Email : "+person.Email);
+                sw.WriteLine("Zip code : "+person.Zip);
                 sw.WriteLine();
                 sw.Close();
                 Console.WriteLine("\nData added successfully in file");
-            }
-            else
-            {
-                Console.WriteLine("\nFile Not Found");
             }
         }
         /// <summary>
@@ -39,13 +35,9 @@ namespace AddressBookSystem_Part2.FileIOOperation
         /// </summary>
         public static void ReadRecordsFromFile(string path)
         {           
-            if (File.Exists(path))
+            if (Program.IsFileExists(path))
             {
                 Console.WriteLine(File.ReadAllText(path));
-            }
-            else
-            {
-                Console.WriteLine("\nFile Not Found");
             }
         }
     }
