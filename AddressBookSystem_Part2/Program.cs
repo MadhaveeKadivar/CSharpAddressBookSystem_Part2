@@ -1,5 +1,6 @@
 ﻿using AddressBookSystem_Part2.CSVIOOperation;
 using AddressBookSystem_Part2.FileIOOperation;
+using AddressBookSystem_Part2.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,7 +15,8 @@ namespace AddressBookSystem_Part2
         static void Main(string[] args)
         {
             //string path = @"C:\Users\DELL\source\repos\AddressBookSystem_UC13_FileIO\AddressBookSystem_UC13_FileIO\MyFiles\Records.txt";
-            string path = @"C:\Users\DELL\source\repos\AddressBookSystem_Part2\AddressBookSystem_Part2\MyFiles\RecordsInCSVFormat.csv";
+            //string path = @"C:\Users\DELL\source\repos\AddressBookSystem_Part2\AddressBookSystem_Part2\MyFiles\RecordsInCSVFormat.csv";
+            string path = @"C:\Users\DELL\source\repos\AddressBookSystem_Part2\AddressBookSystem_Part2\MyFiles\RecordsInJSONFormat.json";
             PersonInput input = new PersonInput();
             //Getting details from user
             Console.WriteLine("\nEnter your First Name : ");
@@ -40,10 +42,14 @@ namespace AddressBookSystem_Part2
             //FileIO.ReadRecordsFromFile(path); // Reading all records from file 
             //Console.ReadLine();
 
-            ///Read and Write Operation in CSV Files
-            CSVOperations.WriteRecordsInCSVFile(path, input);
-            Console.WriteLine("\n\nRecords present in CSV file are : \n");
-            CSVOperations.ReadRecordsInCSVFile(path);
+            //Read and Write Operation in CSV Files
+            //CSVOperations.WriteRecordsInCSVFile(path, input);
+            //Console.WriteLine("\n\nRecords present in CSV file are : \n");
+            //CSVOperations.ReadRecordsInCSVFile(path);
+
+            //Read and Write Operation in JSON Files
+            JsonIOOperations.WriteRecordsInJSONFile(path, input);
+           // JsonIOOperations.ReadRecordsInJSONFile(path);
             Console.ReadLine();
         }
         /// <summary>
